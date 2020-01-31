@@ -19,4 +19,8 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::resource('Agenda','AgendaController');
+Route::resource('agenda','AgendaController');
+
+Route::get('/cancelar',function(){
+    return redirect()->route('agenda.index')->with('cancelar','Acción Cancelada!');
+})->name('cancelar');
