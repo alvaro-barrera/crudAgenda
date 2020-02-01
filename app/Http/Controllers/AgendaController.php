@@ -20,10 +20,30 @@ class AgendaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $Agenda=Agenda::paginate(5);
-        return view('agenda.index',compact('Agenda'));
+
+        $buscar = $request->get('buscarpor');
+
+        $tipo = $request->get('tipo');
+
+       //$variablesurl=$request->all();
+       //$variablesurl=$request->input();
+       //$variablesurl=$request->query();
+       //$variablesurl=$request->only('tipo','buscarpor');
+       //$variablesurl=$request->except('page');
+       $variablesurl=$_GET;
+
+       /*$variablesurl=[
+           'tipo'=>$tipo,
+           'buscarpor'=>$buscar
+       ];*/
+
+        //$Agenda = Agenda::buscarpor($tipo, $buscar)->paginate(5)->appends($variablesurl);
+
+        $Agenda = Agenda::buscarpor($tipo, $buscar)->paginate(5);
+        
+        return view('agenda.index', compact('Agenda'));
     }
 
     /**
