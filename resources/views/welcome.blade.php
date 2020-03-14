@@ -13,7 +13,8 @@
         <style>
             html, body {
                 color: #636b6f;
-                font-family: 'Nunito', sans-serif;
+                font-size: 16px;
+font-family: 'RobotoCondensed';
                 font-weight: 200;
                 height: 100vh;
                 margin: 0;

@@ -10,15 +10,21 @@
      <br>
      @include('agenda.navuser')
 
+     <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item"><a href="{{route('agenda.index')}}">Inicio</a></li>    
+  <li class="breadcrumb-item active">Nuevo Registro</li>              
+            </ol>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
 
-
-<nav aria-label="breadcrumb">
-  <ol class="breadcrumb">
-  <li class="breadcrumb-item"><a href="{{route('agenda.index')}}">Inicio</a></li>    
-  <li class="breadcrumb-item active">Nuevo Registro</li>
-   
-  </ol>
-</nav>
 </div>
 
 <form method="post" action="{{route('agenda.store')}}">

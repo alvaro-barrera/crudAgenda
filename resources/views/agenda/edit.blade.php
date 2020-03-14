@@ -10,17 +10,25 @@
      <br>
      @include('agenda.navuser')
 
+     <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item"><a href="{{route('agenda.index')}}">Inicio</a></li>       
+            <li class="breadcrumb-item"><a>Editar registro</a></li>
+            <li class="breadcrumb-item active" aria-current="page">{{$Agenda->id}}</li>              
+              
+            </ol>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
 
 
-<nav aria-label="breadcrumb">
-  <ol class="breadcrumb">
-  <li class="breadcrumb-item"><a href="{{route('agenda.index')}}">Inicio</a></li>       
-  <li class="breadcrumb-item"><a>Editar registro</a></li>
-    <li class="breadcrumb-item active" aria-current="page">{{$Agenda->id}}</li>
-  </ol>
-</nav>
 </div>
-{{$Agenda}}
 <form method="post" action="{{route('agenda.update',$Agenda->id)}}">
 @method('PUT')
 @csrf
